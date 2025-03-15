@@ -26,7 +26,11 @@ module.exports = {
     module: {
       rules: [
         {
-          test: /\.js$/, // Обробляємо лише .js файли
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader'], // для обробки CSS
+        },
+        {
+          test: /\.js$/,
           exclude: /node_modules/, // Виключаємо папку node_modules
           use: {
             loader: 'babel-loader', // Використовуємо babel-loader для транспіляції
